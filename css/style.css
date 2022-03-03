@@ -1,0 +1,216 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(to top,#0f0f0f, rgb(41, 41, 41));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    height: 13vh;
+    width: 100%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index:1;
+    background: rgba( 41, 41, 41, 0.3 );
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+}
+header a{
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s;
+}
+header a:hover, .pagina p:hover, .abre:hover, .cierra:hover{
+    color: rgb(255, 15, 107);
+}
+.inicio{
+    position: absolute;
+    margin-right: 80vw;
+}
+.derecha{
+    font-size: 0.9em;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 27vw;
+    margin-left: 65vw;
+}
+.centro{
+    margin: 0 20px;
+}
+header img{
+    height: 10vh;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-between;
+    margin-top: 18vh;
+}
+.card{
+    height: 30%;
+    width: 15vw;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+.card p, h3{
+    color: white;
+    margin-left: 10px;
+}
+.boton{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 3px;
+    margin-bottom: 5px;
+    width: 40%;
+    margin-left: 10px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton:hover{
+    background-color: rgb(197, 197, 197);
+}
+.pagina p{
+    color: white;
+    font-size: 3em;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.pagina{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    margin-top: 5vh;
+}
+.numero{
+    margin: 0 5vw;
+    font-size: 3em;
+    color: white;
+}
+.card a{
+    text-decoration: none;
+    color: black;
+}
+.personaje{
+    width: 60%;
+    border-radius: 20px;
+    height: 35vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    background: rgb( 41, 41, 41 );
+}
+.personaje h2, .personaje h4{
+    color: white;
+    margin-left: 2vw;
+}
+.personaje img{
+    height: 100%;
+}
+.informacion{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.modal{
+    height: 100vh;
+    background-color: rgba( 0, 0, 0, 0.48 );
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.invisible{
+    display: none;
+}
+.capitulos{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 15vh;
+}
+.capitulo{
+    width: 100%;
+    border: 1px solid black;
+    background-color: rgb(53, 53, 53);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s;
+}
+.abre{
+    position: absolute;
+    height: 80%;
+    right: 2vw;
+    transform: rotate(-90deg);
+    font-size: 2em;
+    color: white;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 6vh;
+}
+.cierra{
+    font-size: 1.5em;
+    color: white;
+    position: absolute;
+    right: 2.1vw;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.nombres{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+footer{
+    margin-top: 10vh;
+    height: 40vh;
+    background-color: #0f0f0f;
+    width: 100%;
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+.redes{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vw;
+}
+.redes a{
+    color: white;
+    text-decoration: none;
+    margin-bottom: 2vh;
+}
