@@ -294,4 +294,19 @@ h4{
         top: 1vh;
         left: 1vw;
     }
+    .personaje{
+        height: 25vh;
+        width: 80%;
+    }
+    .informacion * {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 475px) {
+    .personaje{
+        height: 20vh;
+    }
+    .informacion *{
+        font-size: 8px;
+    }
 }
