@@ -4,11 +4,20 @@ window.addEventListener("load",() => {
     const flechas = document.querySelectorAll(".pagina p");
     const numero = document.querySelector(".numero");
     const modal = document.querySelector(".modal");
+    const header = document.querySelector("header");
+    const modificadorHeader = document.querySelector(".headerResponsive");
     let indicador = 1;
 
     modal.addEventListener("click",function(){
         this.innerHTML = "";
         this.classList.add("invisible");
+    });
+
+    modificadorHeader.addEventListener("click",function(){
+        header.classList.toggle("visible");
+        document.querySelector("span:nth-child(2)").classList.toggle("invisible");
+        document.querySelector("span:first-child").classList.toggle("negativo");
+        document.querySelector("span:last-child").classList.toggle("positivo");
     });
 
     class Card{

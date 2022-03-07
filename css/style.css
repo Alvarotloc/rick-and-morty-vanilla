@@ -5,7 +5,7 @@
 }
 body{
     min-height: 100vh;
-    background-image: linear-gradient(to top,#0f0f0f, rgb(41, 41, 41));
+    background-image: linear-gradient(to top,#0f0f0f, rgb(66, 66, 66));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,7 @@ header a{
     color: white;
     transition: all 0.4s;
 }
-header a:hover, .pagina p:hover, .abre:hover, .cierra:hover{
+header a:hover, .pagina p:hover, .abre:hover, .cierra:hover, .redes a:hover,.headerResponsive span:hover{
     color: rgb(255, 15, 107);
 }
 .inicio{
@@ -53,13 +53,12 @@ header img{
 .cards{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-    justify-content: space-between;
+    width: 80vw;
+    justify-content: center;
     margin-top: 18vh;
 }
 .card{
-    height: 30%;
-    width: 15vw;
+    width: 230px;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -73,7 +72,7 @@ header img{
     margin-bottom: 30px;
     margin-right: 10px;
 }
-.card p, h3{
+.card p, h3,h4{
     color: white;
     margin-left: 10px;
 }
@@ -118,7 +117,7 @@ header img{
 .personaje{
     width: 60%;
     border-radius: 20px;
-    height: 35vh;
+    height: 45vh;
     overflow: hidden;
     position: relative;
     margin-top: 20vh;
@@ -150,13 +149,13 @@ header img{
 .invisible{
     display: none;
 }
-.capitulos{
+.capitulos,.localizaciones{
     display: flex;
     flex-direction: column;
     width: 70%;
     margin-top: 15vh;
 }
-.capitulo{
+.capitulo,.localizacion{
     width: 100%;
     border: 1px solid black;
     background-color: rgb(53, 53, 53);
@@ -196,21 +195,103 @@ header img{
 }
 footer{
     margin-top: 10vh;
-    height: 40vh;
+    height: 15vh;
     background-color: #0f0f0f;
     width: 100%;
     border-top: 1px solid white;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 .redes{
-    height: 80%;
     display: flex;
-    flex-direction: column;
-    margin-left: 5vw;
+    border-bottom: 1px solid white;
 }
 .redes a{
     color: white;
     text-decoration: none;
-    margin-bottom: 2vh;
+    padding: 0 2vw;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.redes a:hover{
+    background-color: white;
+}
+.copyrigth{
+    margin-top: 1vh;
+    color: white;
+}
+h4{
+    margin-bottom: 1vh;
+}
+.localizacion h3{
+    margin-bottom: 1vh;
+    color: rgb(255, 15, 107);
+}
+.titulo{
+    display: none;
+}
+.visible{
+    top: 0;
+}
+.negativo{
+    transform: rotate(-45deg);
+    position: relative;
+    top: 7px;
+}
+.positivo{
+    transform: rotate(45deg);
+}
+@media screen and (max-width: 800px){
+    header{
+        height: 100vh;
+        top: -100vh;
+        background: rgba( 41, 41, 41, 0.8 );
+    }
+    .capitulos,.cards,.localizaciones{
+        margin-top: 5vh;
+    }
+    .titulo{
+        display: block;
+        margin-top: 5vh;
+        color: rgb(255, 15, 107);
+    }
+    .headerResponsive{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-top: 6.5vh;
+        right: 5vw;
+        z-index: 1;
+    }
+    .headerResponsive span{
+        width: 3vw;
+        padding: 5px 5px 0;
+        border-radius: 5px;
+        border: 1px solid white;
+        background-color: white;
+    }
+    .headerResponsive span:nth-child(2){
+        margin: 3px 0;
+    }
+    .derecha{
+        flex-direction: column;
+        top: 20vh;
+        left: 6vw;
+        width: 0;
+        margin: 0;
+    }
+    .centro{
+        margin: 0;
+    }
+    .inicio{
+        top: 13vh;
+        left: 6vw;
+    }
+    header img{
+        position: absolute;
+        top: 1vh;
+        left: 1vw;
+    }
 }
