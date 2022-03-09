@@ -23,6 +23,15 @@ window.addEventListener("load",() => {
             this.crearLocalizacion();
         }
         crearLocalizacion(){
+            let ids = [];
+
+            this.residentes.forEach((residente) => {
+                ids.push(residente.split("/").pop());
+            });
+            if(ids.length > 10){
+                ids = ids.splice(0,10);
+            }
+
             let container = document.createElement("div");
             container.className = "localizacion";
 
@@ -43,12 +52,16 @@ window.addEventListener("load",() => {
             }else if(this.residentes.length === 0){
                 residents.innerHTML = "Residentes: Nobody";
             }
-            this.residentes.forEach((residente, index) => {
-                fetch(residente)
-                .then(respuesta => respuesta.json())
-                .then(respuesta => {
-                    residents.innerHTML += respuesta.name + (this.residentes.length - 1 === index ? "." : ", ");
-                })
+
+            fetch(`https://rickandmortyapi.com/api/character/${ids}`)
+            .then(respuesta => respuesta.json())
+            .then(respuesta => {
+                if(respuesta.length > 1){
+                    return respuesta.forEach(function(personaje,index){
+                        residents.innerHTML += personaje.name + (respuesta.length - 1 !== index ? ", " : ".");
+                    });
+                }
+                return residents.innerHTML += respuesta.name + ".";
             });
 
             container.appendChild(nombre);

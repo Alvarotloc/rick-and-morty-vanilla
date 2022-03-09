@@ -23,6 +23,15 @@ window.addEventListener("load",() => {
             this.crearEpisodio();
         }
         crearEpisodio(){
+            let ids = [];
+
+            this.personajes.forEach((residente) => {
+                ids.push(residente.split("/").pop());
+            });
+            if(ids.length > 10){
+                ids = ids.splice(0,10);
+            }
+
             let capitulo = document.createElement("div");
             capitulo.className = "capitulo";
 
@@ -45,10 +54,15 @@ window.addEventListener("load",() => {
                 fecha.classList.remove("invisible");
                 nombresPersonajes.classList.remove("invisible");
                 if(nombresPersonajes.innerHTML === "Nombres: " ){
-                    this.personajes.forEach((personaje, index) => {
-                        fetch(personaje)
-                        .then(respuesta => respuesta.json())
-                        .then(respuesta => nombresPersonajes.innerHTML += respuesta.name + (this.personajes.length - 1 === index ? "." : ", "))
+                    fetch(`https://rickandmortyapi.com/api/character/${ids}`)
+                    .then(respuesta => respuesta.json())
+                    .then(respuesta => {
+                        if(respuesta.length > 1){
+                            return respuesta.forEach(function(personaje,index){
+                                nombresPersonajes.innerHTML += personaje.name + (respuesta.length - 1 !== index ? ", " : ".");
+                            });
+                        }
+                        return nombresPersonajes.innerHTML += respuesta.name + ".";
                     });
                 }
             });
@@ -75,7 +89,6 @@ window.addEventListener("load",() => {
             capitulo.appendChild(top);
             capitulo.appendChild(fecha)
             capitulo.appendChild(nombresPersonajes)
-            // capitulo.appendChild(personajes)
             contenedor.appendChild(capitulo);
         }
     }
