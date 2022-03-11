@@ -6,6 +6,8 @@ window.addEventListener("load",() => {
     const modal = document.querySelector(".modal");
     const header = document.querySelector("header");
     const modificadorHeader = document.querySelector(".headerResponsive");
+    const derecha = document.querySelector(".mas");
+    const izquierda = document.querySelector(".menos");
     let indicador = 1;
 
     modal.addEventListener("click",function(){
@@ -145,22 +147,30 @@ window.addEventListener("load",() => {
         flecha.addEventListener("click",function(){
             if(indice === 1){
                 indicador++;
-                if(indicador === 43){
-                    indicador = 42;
-                }
                 numero.innerHTML = indicador;
                 contenedor.innerHTML = "";
+                izquierda.classList.remove("invisible");
+                comprobador();
                 return conectarse(indicador);
             }else if(indice === 0){
                 indicador--;
-                if(indicador === 0){
-                    indicador = 1;
-                }
                 numero.innerHTML = indicador;
                 contenedor.innerHTML = "";
+                derecha.classList.remove("invisible");
+                comprobador();
                 conectarse(indicador);
             }
         });
     });
+
+    function comprobador(){
+        if(indicador === 1){
+            return izquierda.classList.add("invisible");
+        }
+        if(indicador === 42){
+            return derecha.classList.add("invisible");
+        }
+    }
+    comprobador();
     conectarse(1);
 });
