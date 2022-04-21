@@ -110,10 +110,10 @@ header img{
     font-size: 3em;
     color: white;
 }
-.card a{
+/* .card a{
     text-decoration: none;
     color: black;
-}
+} */
 .personaje{
     width: 60%;
     border-radius: 20px;
@@ -190,8 +190,7 @@ header img{
     transition: all 0.4s;
 }
 .nombres{
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-top: 2vh 0;
 }
 footer{
     margin-top: 10vh;

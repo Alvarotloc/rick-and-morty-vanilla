@@ -88,21 +88,21 @@ window.addEventListener("load",() => {
         flecha.addEventListener("click",function(){
             if(indice === 1){
                 indicador++;
-                numero.innerHTML = indicador;
-                contenedor.innerHTML = "";
                 izquierda.classList.remove("invisible");
-                comprobador();
-                return conectarse(indicador);
+                flechasFunct(indicador)
             }else if(indice === 0){
                 indicador--;
-                numero.innerHTML = indicador;
-                contenedor.innerHTML = "";
                 derecha.classList.remove("invisible");
-                comprobador();
-                conectarse(indicador);
+                flechasFunct(indicador)
             }
         });
     });
+    function flechasFunct (indicador) {
+        numero.innerHTML = indicador;
+        contenedor.innerHTML = "";
+        comprobador();
+        conectarse(indicador);
+    }
     function comprobador(){
         if(indicador === 1){
             return izquierda.classList.add("invisible");
